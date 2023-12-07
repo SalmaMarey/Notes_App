@@ -18,7 +18,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: const HomeScreen(),
+      home: HomeScreen(
+        note: _registerNotes,
+      ),
     );
   }
 }

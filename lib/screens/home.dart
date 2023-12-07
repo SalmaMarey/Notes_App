@@ -1,12 +1,19 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+
 import 'package:notes_app/screens/add_note.dart';
 import 'package:notes_app/screens/edit_note.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+import '../models/note.dart';
 
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({
+    super.key,
+    required this.note,
+  });
+
+  final Note note;
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
@@ -179,22 +186,22 @@ class _HomeScreenState extends State<HomeScreen> {
                     onTap: () {},
                     child: Card(
                       color: randomGenerator(),
-                      child: const Column(children: [
+                      child: Column(children: [
                         Padding(
-                          padding: EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(8.0),
                           child: Row(
                             children: [
                               Text(
-                                'Title',
-                                style: TextStyle(
+                                note.title,
+                                style: const TextStyle(
                                     color: Colors.black,
                                     fontSize: 25,
                                     fontWeight: FontWeight.bold),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 260,
                               ),
-                              Icon(
+                              const Icon(
                                 Icons.bookmark,
                                 size: 30,
                                 color: Colors.yellow,
@@ -202,7 +209,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ],
                           ),
                         ),
-                        ListTile(
+                        const ListTile(
                           title: Text('Content'),
                           subtitle: Text('6 Dec 2023, 05:52 PM'),
                           trailing: Icon(
@@ -211,7 +218,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             color: Color.fromARGB(255, 48, 48, 48),
                           ),
                         ),
-                        Icon(
+                        const Icon(
                           Icons.expand_more,
                           color: Colors.black,
                           size: 25,

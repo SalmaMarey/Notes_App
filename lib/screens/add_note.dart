@@ -11,8 +11,8 @@ class AddNote extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
             onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (ctx) => const HomeScreen()));
+              // Navigator.push(context,
+              //     MaterialPageRoute(builder: (ctx) => const HomeScreen()));
             },
             icon: const Icon(
               Icons.arrow_back,
